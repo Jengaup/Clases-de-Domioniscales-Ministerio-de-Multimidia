@@ -1,0 +1,406 @@
+/* ─── Reset & base ─────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --navy:      #0f172a;
+  --navy-mid:  #1e293b;
+  --navy-light:#334155;
+  --white:     #ffffff;
+  --off-white: #f8fafc;
+  --muted:     #94a3b8;
+  --border:    #e2e8f0;
+
+  /* theme colors per month */
+  --identidad:  #2563eb;
+  --excelencia: #16a34a;
+  --comunidad:  #7c3aed;
+  --cultura:    #dc2626;
+  --mision:     #d97706;
+
+  --radius:  12px;
+  --radius-sm: 6px;
+  --shadow:  0 4px 24px rgba(0,0,0,.08);
+  --shadow-lg: 0 12px 48px rgba(0,0,0,.14);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--off-white);
+  color: var(--navy);
+  line-height: 1.65;
+  font-size: 16px;
+}
+
+/* ─── Utilities ─────────────────────────────────────────────────── */
+.container        { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+.container-narrow { max-width: 760px;  margin: 0 auto; padding: 0 24px; }
+.mt-lg            { margin-top: 3rem; }
+
+/* ─── Buttons ───────────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: var(--radius-sm);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  border: 2px solid transparent;
+  transition: all .18s ease;
+}
+.btn-primary {
+  background: var(--identidad);
+  color: var(--white);
+}
+.btn-primary:hover { background: #1d4ed8; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(37,99,235,.35); }
+
+.btn-outline {
+  background: transparent;
+  border-color: var(--identidad);
+  color: var(--identidad);
+}
+.btn-outline:hover { background: var(--identidad); color: var(--white); }
+
+/* ─── Header ────────────────────────────────────────────────────── */
+.site-header {
+  background: var(--navy);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid var(--navy-light);
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+  gap: 16px;
+}
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.brand-icon {
+  width: 40px; height: 40px;
+  background: var(--identidad);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; color: white;
+}
+.brand-text { display: flex; flex-direction: column; }
+.brand-church  { font-size: 13px; font-weight: 700; color: var(--white); line-height: 1.2; }
+.brand-ministry { font-size: 11px; font-weight: 400; color: var(--muted); line-height: 1.2; }
+
+.header-nav { display: flex; gap: 24px; }
+.header-nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color .15s;
+}
+.header-nav a:hover { color: var(--white); }
+
+/* ─── Hero ──────────────────────────────────────────────────────── */
+.hero {
+  background: linear-gradient(135deg, var(--navy) 0%, #1a2e4a 60%, #0f2942 100%);
+  color: var(--white);
+  padding: 96px 0 80px;
+  text-align: center;
+}
+.hero-eyebrow {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+.hero-title {
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 24px;
+}
+.hero-sub {
+  font-size: 16px;
+  color: #93c5fd;
+  font-style: italic;
+  margin-bottom: 40px;
+}
+
+/* ─── Section shared ────────────────────────────────────────────── */
+.section { padding: 80px 0; }
+.section-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--identidad);
+  margin-bottom: 8px;
+}
+.section-title {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 800;
+  margin-bottom: 16px;
+  color: var(--navy);
+}
+.section-intro { color: #475569; max-width: 680px; margin-bottom: 40px; }
+
+/* ─── Clase de hoy ──────────────────────────────────────────────── */
+.section-class { background: var(--white); }
+
+.clase-card {
+  background: var(--navy);
+  color: var(--white);
+  border-radius: var(--radius);
+  padding: 36px 40px;
+  box-shadow: var(--shadow-lg);
+  margin-bottom: 24px;
+}
+.clase-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+.clase-meta { display: flex; align-items: center; gap: 12px; }
+.clase-badge {
+  background: var(--identidad);
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 100px;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+.clase-num  { font-size: 13px; color: var(--muted); font-weight: 500; }
+.clase-fecha { font-size: 13px; color: var(--muted); }
+
+.clase-titulo {
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+.clase-pasaje {
+  font-size: 15px;
+  color: #93c5fd;
+  font-style: italic;
+  margin-bottom: 28px;
+}
+.clase-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+/* ─── Document viewer ───────────────────────────────────────────── */
+.visor-container {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 24px;
+  background: var(--white);
+}
+.visor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background: var(--navy-mid);
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 600;
+}
+.visor-close {
+  background: none;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 13px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: color .15s;
+}
+.visor-close:hover { color: white; }
+.visor-note {
+  padding: 10px 20px;
+  background: #fef9c3;
+  font-size: 13px;
+  color: #713f12;
+  border-bottom: 1px solid #fde68a;
+}
+.visor-note a { color: #1d4ed8; }
+.doc-iframe {
+  width: 100%;
+  height: 680px;
+  border: none;
+  display: block;
+}
+
+/* ─── Sin documento ─────────────────────────────────────────────── */
+.sin-documento {
+  text-align: center;
+  padding: 60px 20px;
+  border: 2px dashed var(--border);
+  border-radius: var(--radius);
+  color: #64748b;
+}
+.sin-doc-icon { font-size: 48px; margin-bottom: 16px; }
+.sin-doc-sub { font-size: 14px; color: var(--muted); margin-top: 6px; }
+
+/* ─── Currículo table ───────────────────────────────────────────── */
+.section-curriculo { background: var(--off-white); }
+
+.table-wrapper { overflow-x: auto; margin-bottom: 56px; border-radius: var(--radius); box-shadow: var(--shadow); }
+
+.curriculo-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--white);
+  font-size: 15px;
+}
+.curriculo-table thead tr {
+  background: var(--navy);
+  color: var(--white);
+}
+.curriculo-table th {
+  padding: 14px 20px;
+  text-align: left;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+.curriculo-table td { padding: 14px 20px; border-bottom: 1px solid var(--border); }
+.curriculo-table tbody tr:last-child td { border-bottom: none; }
+.curriculo-table tbody tr:hover { background: #f1f5f9; }
+
+.mes-col  { font-weight: 600; white-space: nowrap; }
+.clases-col { white-space: nowrap; color: #475569; font-size: 14px; }
+
+.tema-col { font-weight: 800; letter-spacing: .04em; }
+.tema-col[data-color="identidad"]  { color: var(--identidad); }
+.tema-col[data-color="excelencia"] { color: var(--excelencia); }
+.tema-col[data-color="comunidad"]  { color: var(--comunidad); }
+.tema-col[data-color="cultura"]    { color: var(--cultura); }
+.tema-col[data-color="mision"]     { color: var(--mision); }
+
+/* ─── Month cards grid ──────────────────────────────────────────── */
+.meses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.mes-card {
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  background: var(--white);
+  transition: transform .2s, box-shadow .2s;
+}
+.mes-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+
+.mes-card-header {
+  padding: 28px 28px 20px;
+  color: var(--white);
+}
+.mes-card-header[data-color="identidad"]  { background: linear-gradient(135deg, #1d4ed8, #2563eb); }
+.mes-card-header[data-color="excelencia"] { background: linear-gradient(135deg, #15803d, #16a34a); }
+.mes-card-header[data-color="comunidad"]  { background: linear-gradient(135deg, #6d28d9, #7c3aed); }
+.mes-card-header[data-color="cultura"]    { background: linear-gradient(135deg, #b91c1c, #dc2626); }
+.mes-card-header[data-color="mision"]     { background: linear-gradient(135deg, #b45309, #d97706); }
+
+.mes-label     { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; opacity: .75; }
+.mes-tema      { font-size: 1.5rem; font-weight: 800; margin: 4px 0 2px; }
+.mes-subtema   { font-size: 13px; font-weight: 500; opacity: .9; margin-bottom: 2px; }
+.mes-subtema-desc { font-size: 12px; opacity: .7; margin-bottom: 12px; }
+.mes-versiculo {
+  font-size: 12px;
+  font-style: italic;
+  opacity: .8;
+  border-left: 3px solid rgba(255,255,255,.4);
+  padding-left: 10px;
+  line-height: 1.5;
+}
+
+.mes-clases-list {
+  list-style: none;
+  padding: 16px 0;
+}
+.mes-clases-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 20px;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+}
+.mes-clases-list li:last-child { border-bottom: none; }
+
+.clase-n {
+  min-width: 26px; height: 26px;
+  border-radius: 50%;
+  background: var(--off-white);
+  font-size: 12px;
+  font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--navy-light);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.clase-nombre { flex: 1; font-weight: 500; color: var(--navy); line-height: 1.4; }
+.clase-ref    { font-size: 12px; color: var(--muted); white-space: nowrap; margin-top: 3px; }
+
+/* ─── Descripción ───────────────────────────────────────────────── */
+.section-descripcion { background: var(--white); }
+
+.prose p {
+  color: #374151;
+  margin-bottom: 16px;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+/* ─── Components grid ───────────────────────────────────────────── */
+.componentes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+.componente-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  background: var(--off-white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+}
+.componente-icon { font-size: 24px; flex-shrink: 0; margin-top: 2px; }
+.componente-item strong { display: block; margin-bottom: 4px; font-size: 14px; color: var(--navy); }
+.componente-item p { font-size: 13px; color: #64748b; margin: 0; }
+
+/* ─── Footer ────────────────────────────────────────────────────── */
+.site-footer {
+  background: var(--navy);
+  color: var(--muted);
+  text-align: center;
+  padding: 48px 24px;
+}
+.footer-church   { font-size: 18px; font-weight: 700; color: var(--white); margin-bottom: 4px; }
+.footer-ministry { font-size: 13px; margin-bottom: 16px; }
+.footer-verse    { font-size: 13px; font-style: italic; color: #4b6584; }
+
+/* ─── Responsive ────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .header-nav { display: none; }
+  .clase-card { padding: 24px 20px; }
+  .clase-card-header { flex-direction: column; }
+  .clase-actions { flex-direction: column; }
+  .btn { width: 100%; justify-content: center; }
+  .meses-grid { grid-template-columns: 1fr; }
+  .componentes-grid { grid-template-columns: 1fr; }
+}
