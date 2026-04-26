@@ -40,15 +40,29 @@ function initClaseStrip() {
   const badge = document.getElementById("clase-mes-badge");
   if (badge) { badge.textContent = `Mes ${clase.mes} · ${clase.tema}`; badge.style.background = colorVal; }
 
-  document.getElementById("clase-num").textContent   = `Clase ${clase.n}`;
-  document.getElementById("clase-titulo").textContent = clase.titulo;
-  document.getElementById("clase-pasaje").textContent = clase.pasaje;
+  const num = document.getElementById("clase-num");
+  const titulo = document.getElementById("clase-titulo");
+  const pasaje = document.getElementById("clase-pasaje");
+  if (num) num.textContent = `Clase ${clase.n}`;
+  if (titulo) titulo.textContent = clase.titulo;
+  if (pasaje) pasaje.textContent = clase.pasaje;
 
   const today = new Date();
   const el = document.getElementById("clase-fecha");
   if (el) el.textContent = today.toLocaleDateString("es-ES",
     { weekday:"long", year:"numeric", month:"long", day:"numeric" })
     .replace(/^\w/, c => c.toUpperCase());
+}
+
+/* ─── Remove old document/upload placeholder if an old page version renders it ─── */
+function removeOldDocumentPlaceholder() {
+  const contenido = document.getElementById("clase-contenido");
+  if (!contenido) return;
+
+  const oldText = "El documento de esta clase aún no está disponible";
+  if (contenido.textContent.includes(oldText)) {
+    contenido.remove();
+  }
 }
 
 /* ─── Archive: past classes (JS-rendered accordion) ─────────────── */
@@ -96,6 +110,7 @@ function renderArchivo() {
 
 function toggleArchivo(n) {
   const body = document.getElementById(`archivo-body-${n}`);
+  if (!body) return;
   const hdr  = body.previousElementSibling;
   const chev = hdr.querySelector(".archivo-chevron");
   const open = !body.hidden;
@@ -118,6 +133,7 @@ function highlightActiveMes() {
 
 document.addEventListener("DOMContentLoaded", () => {
   initClaseStrip();
+  removeOldDocumentPlaceholder();
   renderArchivo();
   highlightActiveMes();
 });
