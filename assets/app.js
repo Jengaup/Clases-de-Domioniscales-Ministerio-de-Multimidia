@@ -2,7 +2,8 @@
  *
  *   claseActual:  número de la clase de este domingo (1-20)
  *
- *   El contenido de la clase viene de data/clases-data.js
+ *   NOTA: el contenido de la clase va directo en index.html —
+ *   este archivo solo actualiza la barra de encabezado y el archivo.
  * ─────────────────────────────────────────────────────────────── */
 const CONFIG = {
   claseActual: 1,
@@ -66,24 +67,6 @@ function initClaseCard() {
   document.getElementById("clase-fecha").textContent =
     today.toLocaleDateString("es-ES", opts).replace(/^\w/, c => c.toUpperCase());
 
-  // Inject worksheet content
-  renderContenidoClase(contentFor(CONFIG.claseActual));
-}
-
-/* ─── Render inline class content ────────────────────────────────── */
-function renderContenidoClase(data) {
-  const el = document.getElementById("clase-contenido");
-  if (!el) return;
-
-  if (data && data.contenido) {
-    el.innerHTML = data.contenido;
-  } else {
-    el.innerHTML = `
-      <div class="contenido-pendiente">
-        <p>El contenido de esta clase se publicará este domingo.</p>
-        <span>Vuelve pronto.</span>
-      </div>`;
-  }
 }
 
 /* ─── Render archive of past classes ─────────────────────────────── */
