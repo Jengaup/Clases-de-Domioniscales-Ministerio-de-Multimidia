@@ -32,43 +32,26 @@
     </div>
   </header>
 
-  <!-- ══════════════ HERO ══════════════ -->
-  <section class="hero">
-    <div class="container">
-      <p class="hero-eyebrow">Clases Dominicales · Ministerio de Multimedia</p>
-      <h1 class="hero-title">Formación espiritual<br />para quienes sirven<br />en la comunicación del evangelio</h1>
-      <p class="hero-sub">«Todo lo que hagáis, hacedlo de corazón, como para el Señor» — Colosenses 3:23</p>
-      <a href="#clase-domingo" class="btn btn-primary">Ver clase de este domingo</a>
-    </div>
-  </section>
-
   <!-- ══════════════ CLASE DE ESTE DOMINGO ══════════════ -->
-  <section id="clase-domingo" class="section section-class">
+  <section id="clase-domingo" class="section-class">
     <div class="container">
-      <div class="section-label">Este domingo</div>
-      <h2 class="section-title">Clase de hoy</h2>
 
-      <!-- Current class card -->
-      <div id="clase-card" class="clase-card">
-        <div class="clase-card-header">
-          <div class="clase-meta">
-            <span class="clase-badge" id="clase-mes-badge">Mes 1</span>
-            <span class="clase-num" id="clase-num">Clase 1</span>
-          </div>
-          <div class="clase-fecha" id="clase-fecha"></div>
+      <!-- Slim header strip -->
+      <div class="clase-strip" id="clase-card">
+        <div class="clase-strip-left">
+          <span class="clase-badge" id="clase-mes-badge">Mes 1</span>
+          <span class="clase-num" id="clase-num">Clase 1</span>
         </div>
-        <h3 class="clase-titulo" id="clase-titulo">No soy técnico, soy mayordomo</h3>
-        <p class="clase-pasaje" id="clase-pasaje">Lucas 16:10-12</p>
-
-        <!-- Actions — only shown when a .docx file is available -->
-        <div id="clase-actions" class="clase-actions" style="display:none;">
-          <a id="btn-descargar" href="#" download class="btn btn-primary">
-            ⬇ Descargar documento (.docx)
-          </a>
+        <div class="clase-strip-center">
+          <h1 class="clase-titulo" id="clase-titulo">No soy técnico, soy mayordomo</h1>
+          <p class="clase-pasaje" id="clase-pasaje">Lucas 16:10-12</p>
+        </div>
+        <div class="clase-strip-right">
+          <span class="clase-fecha" id="clase-fecha"></span>
         </div>
       </div>
 
-      <!-- Inline class content -->
+      <!-- Worksheet content -->
       <div id="clase-contenido" class="clase-contenido"></div>
 
     </div>

@@ -66,19 +66,8 @@ function initClaseCard() {
   document.getElementById("clase-fecha").textContent =
     today.toLocaleDateString("es-ES", opts).replace(/^\w/, c => c.toUpperCase());
 
-  // Download button — only show when class entry has a docPath
-  const data        = contentFor(CONFIG.claseActual);
-  const actionsDiv  = document.getElementById("clase-actions");
-  const btnDescargar = document.getElementById("btn-descargar");
-
-  if (data && data.docPath) {
-    btnDescargar.href     = data.docPath;
-    btnDescargar.download = data.docPath.split("/").pop();
-    actionsDiv.style.display = "flex";
-  }
-
-  // Inject inline content
-  renderContenidoClase(data);
+  // Inject worksheet content
+  renderContenidoClase(contentFor(CONFIG.claseActual));
 }
 
 /* ─── Render inline class content ────────────────────────────────── */
@@ -117,9 +106,6 @@ function renderArchivo() {
     const meta     = metaFor(data.n);
     if (!meta) return "";
     const colorKey = MES_COLOR[meta.mes];
-    const descarga = data.docPath
-      ? `<a href="${data.docPath}" download class="archivo-btn-doc">⬇ Descargar .docx</a>`
-      : "";
 
     return `
       <div class="archivo-card" data-n="${data.n}">
@@ -135,7 +121,6 @@ function renderArchivo() {
           <span class="archivo-chevron">▼</span>
         </button>
         <div class="archivo-body" id="archivo-body-${data.n}" hidden>
-          ${descarga ? `<div class="archivo-doc-row">${descarga}</div>` : ""}
           <div class="clase-contenido archivo-contenido">${data.contenido}</div>
         </div>
       </div>`;
