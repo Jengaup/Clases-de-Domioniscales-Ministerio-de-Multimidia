@@ -24,6 +24,7 @@
         </div>
         <nav class="header-nav">
           <a href="#clase-domingo">Clase de hoy</a>
+          <a href="#archivo">Archivo</a>
           <a href="#curriculo">Currículo</a>
           <a href="#descripcion">Descripción</a>
         </nav>
@@ -59,37 +60,30 @@
         <h3 class="clase-titulo" id="clase-titulo">No soy técnico, soy mayordomo</h3>
         <p class="clase-pasaje" id="clase-pasaje">Lucas 16:10-12</p>
 
-        <!-- Actions -->
-        <div class="clase-actions">
-          <a id="btn-descargar" href="documentos/clase-01.docx" download class="btn btn-primary">
+        <!-- Actions — only shown when a .docx file is available -->
+        <div id="clase-actions" class="clase-actions" style="display:none;">
+          <a id="btn-descargar" href="#" download class="btn btn-primary">
             ⬇ Descargar documento (.docx)
           </a>
-          <button id="btn-ver" class="btn btn-outline" onclick="toggleVisor()">
-            👁 Ver documento en pantalla
-          </button>
         </div>
       </div>
 
-      <!-- Document viewer -->
-      <div id="visor-container" class="visor-container" style="display:none;">
-        <div class="visor-header">
-          <span>Vista previa del documento</span>
-          <button onclick="toggleVisor()" class="visor-close">✕ Cerrar</button>
-        </div>
-        <div class="visor-note">
-          <strong>Nota:</strong> Si el documento no carga, descárgalo con el botón de arriba o
-          <a id="visor-link-google" href="#" target="_blank" rel="noopener">ábrelo en Google Docs</a>.
-        </div>
-        <iframe id="doc-iframe" class="doc-iframe" src="" title="Vista previa del documento"></iframe>
-      </div>
+      <!-- Inline class content -->
+      <div id="clase-contenido" class="clase-contenido"></div>
 
-      <!-- No document placeholder -->
-      <div id="sin-documento" class="sin-documento" style="display:none;">
-        <div class="sin-doc-icon">📄</div>
-        <p>El documento de esta clase aún no está disponible.</p>
-        <p class="sin-doc-sub">Vuelve este domingo antes del servicio.</p>
-      </div>
+    </div>
+  </section>
 
+  <!-- ══════════════ ARCHIVO DE CLASES ══════════════ -->
+  <section id="archivo" class="section section-archivo">
+    <div class="container">
+      <div class="section-label">Clases anteriores</div>
+      <h2 class="section-title">Archivo</h2>
+      <p class="section-intro">Aquí aparecen todas las clases que ya se han dado. Haz clic en cualquiera para leer su contenido.</p>
+      <div id="archivo-lista" class="archivo-lista"></div>
+      <p id="archivo-vacio" class="archivo-vacio" style="display:none;">
+        Aún no hay clases anteriores. A partir de la segunda semana aparecerán aquí.
+      </p>
     </div>
   </section>
 
@@ -326,6 +320,7 @@
     </div>
   </footer>
 
+  <script src="data/clases-data.js"></script>
   <script src="assets/app.js"></script>
 </body>
 </html>
