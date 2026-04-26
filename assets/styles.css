@@ -394,6 +394,153 @@ body {
 .footer-ministry { font-size: 13px; margin-bottom: 16px; }
 .footer-verse    { font-size: 13px; font-style: italic; color: #4b6584; }
 
+/* ─── Worksheet form elements ───────────────────────────────────── */
+
+/* participant fields at top */
+.cc-ficha {
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 16px 20px;
+  margin-bottom: 24px;
+  background: var(--off-white);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.cc-ficha-row { display: flex; gap: 16px; flex-wrap: wrap; }
+.cc-ficha-campo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+.cc-ficha-campo span { font-size: 12px; font-weight: 600; color: #64748b; text-transform: uppercase; letter-spacing: .05em; }
+.cc-ficha-campo--short { max-width: 180px; }
+
+/* text inputs */
+.cc-input {
+  font-family: inherit;
+  font-size: 15px;
+  border: none;
+  border-bottom: 1.5px solid #cbd5e1;
+  background: transparent;
+  padding: 6px 2px;
+  color: var(--navy);
+  outline: none;
+  transition: border-color .15s;
+  width: 100%;
+}
+.cc-input:focus { border-bottom-color: var(--identidad); }
+.cc-input::placeholder { color: #cbd5e1; }
+.cc-input--fill { flex: 1; min-width: 140px; }
+
+/* fill-row: text + input side by side */
+.cc-fill-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  font-size: 15px;
+  color: #374151;
+  flex-wrap: wrap;
+}
+.cc-fill-label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 15px;
+  color: #374151;
+}
+
+/* textareas */
+.cc-textarea {
+  font-family: inherit;
+  font-size: 15px;
+  width: 100%;
+  border: 1.5px solid #cbd5e1;
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  color: var(--navy);
+  background: var(--white);
+  resize: vertical;
+  outline: none;
+  transition: border-color .15s;
+  line-height: 1.6;
+  margin-top: 4px;
+}
+.cc-textarea:focus { border-color: var(--identidad); }
+.cc-textarea::placeholder { color: #cbd5e1; }
+
+/* checkbox list */
+.cc-check-lista { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-top: 12px; }
+.cc-check-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  color: #374151;
+}
+.cc-check-item input[type="checkbox"] {
+  width: 18px; height: 18px;
+  flex-shrink: 0;
+  accent-color: var(--identidad);
+  cursor: pointer;
+  margin-top: 2px;
+}
+.cc-check-item--fill { flex-wrap: wrap; align-items: center; }
+.cc-check-item--fill span { flex-shrink: 0; }
+
+/* questions inside ideas section */
+.cc-pregunta { margin-bottom: 24px; }
+.cc-pregunta:last-child { margin-bottom: 0; }
+.cc-pregunta-titulo { font-weight: 700; font-size: 15px; color: var(--navy); margin-bottom: 10px; }
+
+/* note inside dinámica */
+.cc-nota { font-size: 13px; font-style: italic; color: #64748b; margin-bottom: 10px; }
+
+/* closing prayer */
+.cc-oracion {
+  background: #eff6ff;
+  border-left: 4px solid var(--identidad);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 16px 20px;
+  font-style: italic;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #1e3a5f;
+}
+
+/* ── Section color variants ────────────────────────────────────── */
+.cc-seccion--objetivo { background: #fff1f2; border-radius: var(--radius-sm); padding: 20px; }
+.cc-seccion--objetivo h3 { color: #9f1239; }
+
+.cc-seccion--texto { background: #fefce8; border-radius: var(--radius-sm); padding: 20px; }
+.cc-seccion--texto h3 { color: #854d0e; }
+.cc-seccion--texto blockquote {
+  background: #fef9c3;
+  border-left-color: #ca8a04;
+  color: #713f12;
+  margin-top: 12px;
+}
+.cc-seccion--texto blockquote cite { display: block; text-align: right; margin-top: 8px; font-size: 13px; opacity: .8; }
+
+.cc-seccion--ideas { background: #eff6ff; border-radius: var(--radius-sm); padding: 20px; }
+.cc-seccion--ideas h3 { color: #1e40af; }
+.cc-seccion--ideas .cc-textarea { background: #f8fafc; }
+
+.cc-seccion--dinamica { background: #f8fafc; border-radius: var(--radius-sm); padding: 20px; }
+.cc-seccion--dinamica h3 { color: var(--navy); }
+
+.cc-seccion--compromiso { background: #f0fdf4; border-radius: var(--radius-sm); padding: 20px; }
+.cc-seccion--compromiso h3 { color: #15803d; }
+.cc-seccion--compromiso .cc-check-item input[type="checkbox"] { accent-color: #16a34a; }
+
+.cc-seccion--notas { background: var(--off-white); border-radius: var(--radius-sm); padding: 20px; }
+.cc-seccion--notas h3 { color: var(--navy-light); }
+
+.cc-seccion--oracion { background: #f0f9ff; border-radius: var(--radius-sm); padding: 20px; }
+.cc-seccion--oracion h3 { color: #075985; }
+
 /* ─── Inline class content ──────────────────────────────────────── */
 .clase-contenido {
   background: var(--white);
@@ -558,4 +705,7 @@ body {
   .clase-contenido { padding: 20px 16px; }
   .archivo-card-header { flex-wrap: wrap; gap: 10px; }
   .archivo-contenido { padding: 20px 16px; }
+  .cc-ficha-campo--short { max-width: 100%; }
+  .cc-fill-row { flex-direction: column; align-items: flex-start; }
+  .cc-fill-row .cc-input--fill { width: 100%; }
 }
