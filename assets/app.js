@@ -1,6 +1,6 @@
 /* Configuración del sitio */
 const CONFIG = {
-  claseActual: 1,
+  claseActual: 2,
 };
 
 const CLASES = [
@@ -27,6 +27,96 @@ const CLASES = [
 ];
 
 const MES_COLOR = { 1: "identidad", 2: "excelencia", 3: "comunidad", 4: "cultura", 5: "mision" };
+
+const CLASE_HTML = {
+  2: `
+    <div class="cc-seccion cc-seccion--objetivo">
+      <h3>🎯 Lo que vamos a aprender hoy</h3>
+      <p>Reconocer cómo el dominio técnico puede generar soberbia y alejamiento de Cristo y del equipo, y comprometernos con la humildad activa.</p>
+    </div>
+
+    <div class="cc-seccion cc-seccion--texto">
+      <h3>📖 Textos centrales — RVR1960</h3>
+      <blockquote>
+        <strong>1 Corintios 8:1</strong><br>
+        «El conocimiento envanece, pero el amor edifica.»
+        <br><br>
+        <strong>Filipenses 2:3-4</strong><br>
+        «Nada hagáis por contención o por vanagloria; antes bien con humildad, estimando cada uno a los demás como superiores a él mismo; no mirando cada uno por lo suyo propio, sino cada cual también por lo de los otros.»
+        <cite>— Filipenses 2:3-4, RVR1960</cite>
+      </blockquote>
+    </div>
+
+    <div class="cc-seccion cc-seccion--ideas">
+      <h3>📝 Ideas clave — Completa mientras escuchas</h3>
+
+      <div class="cc-pregunta">
+        <p class="cc-pregunta-titulo">1. El conocimiento que envanece</p>
+        <label class="cc-fill-row">
+          Según 1 Corintios 8:1, el conocimiento sin
+          <input type="text" class="cc-input cc-input--fill" placeholder="_____________" />
+          destruye al equipo.
+        </label>
+        <label class="cc-fill-label">Escribe 2 síntomas de orgullo técnico que reconoces en ti mismo:</label>
+        <textarea class="cc-textarea" rows="4" placeholder="Escribe aquí..."></textarea>
+      </div>
+
+      <div class="cc-pregunta">
+        <p class="cc-pregunta-titulo">2. Jesús lavó pies siendo el más capaz</p>
+        <label class="cc-fill-row">
+          Juan 13:3 dice que Jesús sabía que
+          <input type="text" class="cc-input cc-input--fill" placeholder="____________________________" />
+        </label>
+        <label class="cc-fill-row">
+          Y aun así decidió
+          <input type="text" class="cc-input cc-input--fill" placeholder="____________________________" />
+        </label>
+        <label class="cc-fill-label">En tu ministerio, ¿qué equivale a «lavar pies» para alguien con menos experiencia que tú?</label>
+        <textarea class="cc-textarea" rows="4" placeholder="Escribe aquí..."></textarea>
+      </div>
+
+      <div class="cc-pregunta">
+        <p class="cc-pregunta-titulo">3. La humildad activa como antídoto</p>
+        <label class="cc-fill-row">
+          Filipenses 2:3-4 no pide que te sientas menos capaz. Pide que
+          <input type="text" class="cc-input cc-input--fill" placeholder="________________" />
+        </label>
+        <label class="cc-fill-label">¿Cuál es la diferencia entre ignorancia y humildad activa?</label>
+        <textarea class="cc-textarea" rows="4" placeholder="Escribe aquí..."></textarea>
+      </div>
+    </div>
+
+    <div class="cc-seccion cc-seccion--dinamica">
+      <h3>✎ Dinámica — Tarjeta anónima</h3>
+      <p><strong>Escribe sin poner tu nombre:</strong></p>
+      <p>Una situación en que tu conocimiento técnico te llevó a tratar mal a alguien: tono condescendiente, impaciencia, ignorar a un compañero o no querer enseñar.</p>
+      <p class="cc-nota">El facilitador recogerá las tarjetas y las leerá en voz alta sin revelar quién escribió qué.</p>
+      <textarea class="cc-textarea" rows="6" placeholder="Escribe aquí..."></textarea>
+    </div>
+
+    <div class="cc-seccion cc-seccion--compromiso">
+      <h3>🌱 Mi compromiso esta semana</h3>
+      <label class="cc-fill-label">Identifico a esta persona en el ministerio a quien puedo enseñarle algo:</label>
+      <input type="text" class="cc-input" placeholder="Escribe aquí..." />
+      <label class="cc-fill-label">Lo que le voy a enseñar:</label>
+      <input type="text" class="cc-input" placeholder="Escribe aquí..." />
+      <label class="cc-fill-label">La actitud específica de orgullo que quiero cambiar:</label>
+      <textarea class="cc-textarea" rows="4" placeholder="Escribe aquí..."></textarea>
+    </div>
+
+    <div class="cc-seccion cc-seccion--notas">
+      <h3>📄 Mis notas</h3>
+      <textarea class="cc-textarea" rows="7" placeholder="Apuntes libres de la clase..."></textarea>
+    </div>
+
+    <div class="cc-seccion cc-seccion--oracion">
+      <h3>🙏 Oración de cierre</h3>
+      <blockquote class="cc-oracion">
+        «Señor, tú lavaste pies siendo el más capaz de todos. Québranos del orgullo que nace de saber, y reconstruye en nosotros el corazón que usa lo que sabe para servir a los demás.»
+      </blockquote>
+    </div>
+  `
+};
 
 function initClaseStrip() {
   const clase = CLASES.find(c => c.n === CONFIG.claseActual);
@@ -57,7 +147,14 @@ function initClaseStrip() {
   }
 }
 
-function removeParticipantFields() {
+function renderCurrentClass() {
+  const contenido = document.getElementById("clase-contenido");
+  if (!contenido) return;
+
+  if (CLASE_HTML[CONFIG.claseActual]) {
+    contenido.innerHTML = CLASE_HTML[CONFIG.claseActual];
+  }
+
   document.querySelectorAll(".cc-ficha").forEach(el => el.remove());
 }
 
@@ -90,15 +187,21 @@ function renderArchivo() {
           <strong class="archivo-titulo">No soy técnico, soy mayordomo</strong>
           <span class="archivo-pasaje">Lucas 16:10-12</span>
         </div>
-        <a
-          class="archivo-download"
-          href="documentos/clase1-abril-26.pdf"
-          download="clase1-abril-26.pdf"
-          onclick="event.stopPropagation()"
-          style="display:inline-flex;align-items:center;justify-content:center;padding:10px 16px;border-radius:999px;background:#2563eb;color:#fff;font-weight:700;text-decoration:none;white-space:nowrap;"
-        >
-          Bajar PDF
-        </a>
+        <a class="archivo-download" href="documentos/clase1-abril-26.pdf" download="clase1-abril-26.pdf" onclick="event.stopPropagation()" style="display:inline-flex;align-items:center;justify-content:center;padding:10px 16px;border-radius:999px;background:#2563eb;color:#fff;font-weight:700;text-decoration:none;white-space:nowrap;">Bajar PDF</a>
+      </div>
+    </div>
+
+    <div class="archivo-card" data-n="2">
+      <div class="archivo-card-header" style="cursor: default;">
+        <div class="archivo-card-meta">
+          <span class="archivo-badge archivo-badge--identidad">Clase 2</span>
+          <span class="archivo-mes">Mes 1 · IDENTIDAD</span>
+        </div>
+        <div class="archivo-card-info">
+          <strong class="archivo-titulo">El problema del orgullo técnico</strong>
+          <span class="archivo-pasaje">1 Corintios 8:1 / Filipenses 2:3-4</span>
+        </div>
+        <a class="archivo-download" href="documentos/clase2-mayo-3.pdf" download="clase2-mayo-3.pdf" onclick="event.stopPropagation()" style="display:inline-flex;align-items:center;justify-content:center;padding:10px 16px;border-radius:999px;background:#2563eb;color:#fff;font-weight:700;text-decoration:none;white-space:nowrap;">Bajar PDF</a>
       </div>
     </div>`;
 }
@@ -118,7 +221,7 @@ function highlightActiveMes() {
 document.addEventListener("DOMContentLoaded", () => {
   initClaseStrip();
   removeOldDocumentPlaceholder();
-  removeParticipantFields();
+  renderCurrentClass();
   renderArchivo();
   highlightActiveMes();
 });
