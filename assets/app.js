@@ -1,6 +1,6 @@
 /* Configuración del sitio */
 const CONFIG = {
-  claseActual: 2,
+  claseActual: 3,
 };
 
 const CLASES = [
@@ -29,6 +29,98 @@ const CLASES = [
 const MES_COLOR = { 1: "identidad", 2: "excelencia", 3: "comunidad", 4: "cultura", 5: "mision" };
 
 const CLASE_HTML = {
+  3: `
+    <div class="cc-seccion cc-seccion--texto">
+      <h3>📖 Lee el texto con atención — Éxodo 31:1-5 (RVR1960)</h3>
+      <blockquote>
+        «Habló Jehová a Moisés, diciendo: Mira, yo he llamado por nombre a Bezaleel hijo de Uri,
+        hijo de Hur, de la tribu de Judá; y lo he llenado del Espíritu de Dios, en sabiduría y en
+        inteligencia, en ciencia y en todo arte, para inventar diseños, para trabajar en oro, en plata
+        y en bronce, y en artificio de piedras para engastarlas, y en artificio de madera; para trabajar
+        en toda clase de labor.»
+        <cite>— Éxodo 31:1-5, RVR1960</cite>
+      </blockquote>
+    </div>
+
+    <div class="cc-seccion cc-seccion--ideas">
+      <h3>📝 Responde las preguntas</h3>
+
+      <div class="cc-pregunta">
+        <p class="cc-pregunta-titulo">1. ¿Qué te llama la atención de que Dios haya llamado a Bezaleel por nombre para una tarea técnica?</p>
+        <textarea class="cc-textarea" rows="5" placeholder="Escribe aquí..."></textarea>
+      </div>
+
+      <div class="cc-pregunta">
+        <p class="cc-pregunta-titulo">2. ¿Cómo describes tu propia habilidad técnica antes de leer este texto?</p>
+        <textarea class="cc-textarea" rows="5" placeholder="Escribe aquí..."></textarea>
+      </div>
+
+      <div class="cc-pregunta">
+        <p class="cc-pregunta-titulo">3. ¿Qué cambia en cómo entiendes tu rol después de leer Éxodo 31?</p>
+        <textarea class="cc-textarea" rows="5" placeholder="Escribe aquí..."></textarea>
+      </div>
+    </div>
+
+    <div class="cc-seccion cc-seccion--dinamica">
+      <h3>✎ Tu declaración de llamado</h3>
+      <p>Escribe en una oración tu llamado específico dentro del ministerio:</p>
+      <label class="cc-fill-row">
+        Dios me llamó a
+        <input type="text" class="cc-input cc-input--fill" placeholder="___________________" />
+      </label>
+      <label class="cc-fill-row" style="margin-top:12px;">
+        para que
+        <input type="text" class="cc-input cc-input--fill" placeholder="___________________" />
+      </label>
+      <label class="cc-fill-label" style="margin-top:16px;">Firma:</label>
+      <input type="text" class="cc-input" style="max-width:260px;" placeholder="Tu firma" />
+    </div>
+
+    <div class="cc-seccion cc-seccion--oracion">
+      <h3>📖 Versículo para llevar esta semana</h3>
+      <blockquote class="cc-oracion">
+        «Porque somos hechura suya, creados en Cristo Jesús para buenas obras,
+        las cuales Dios preparó de antemano para que anduviésemos en ellas.»
+        <br><strong>— Efesios 2:10</strong>
+      </blockquote>
+    </div>
+
+    <div class="cc-seccion cc-seccion--compromiso">
+      <h3>🌱 Mi compromiso esta semana</h3>
+      <ul class="cc-check-lista">
+        <li>
+          <label class="cc-check-item">
+            <input type="checkbox" />
+            <span>Imprimir o escribir mi declaración de llamado en una cartulina.</span>
+          </label>
+        </li>
+        <li>
+          <label class="cc-check-item">
+            <input type="checkbox" />
+            <span>Pegarla en mi área de trabajo: consola, computadora, cámara o escritorio.</span>
+          </label>
+        </li>
+        <li>
+          <label class="cc-check-item">
+            <input type="checkbox" />
+            <span>Leerla en silencio antes del próximo servicio en que participe.</span>
+          </label>
+        </li>
+        <li>
+          <label class="cc-check-item">
+            <input type="checkbox" />
+            <span>Compartirla con alguien fuera del grupo esta semana.</span>
+          </label>
+        </li>
+      </ul>
+    </div>
+
+    <div class="cc-seccion cc-seccion--notas">
+      <h3>📄 Mis notas</h3>
+      <textarea class="cc-textarea" rows="7" placeholder="Apuntes libres de la clase..."></textarea>
+    </div>
+  `,
+
   2: `
     <div class="cc-seccion cc-seccion--objetivo">
       <h3>🎯 Lo que vamos a aprender hoy</h3>
