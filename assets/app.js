@@ -183,7 +183,7 @@ function renderArchivo() {
           <strong class="archivo-titulo">No soy técnico, soy mayordomo</strong>
           <span class="archivo-pasaje">Lucas 16:10-12</span>
         </div>
-        <a class="archivo-download" href="documentos/clase1-abril-26.pdf" download="clase1-abril-26.pdf" onclick="event.stopPropagation()" style="display:inline-flex;align-items:center;justify-content:center;padding:10px 16px;border-radius:999px;background:#2563eb;color:#fff;font-weight:700;text-decoration:none;white-space:nowrap;">Bajar PDF</a>
+        <a class="archivo-download" href="clase1-abril-26.pdf?v=1" download="clase1-abril-26.pdf" onclick="event.stopPropagation()" style="display:inline-flex;align-items:center;justify-content:center;padding:10px 16px;border-radius:999px;background:#2563eb;color:#fff;font-weight:700;text-decoration:none;white-space:nowrap;">Bajar PDF</a>
       </div>
     </div>
 
@@ -197,7 +197,7 @@ function renderArchivo() {
           <strong class="archivo-titulo">El problema del orgullo técnico</strong>
           <span class="archivo-pasaje">1 Corintios 8:1 / Filipenses 2:3-4</span>
         </div>
-        <a class="archivo-download" href="documentos/clase2-mayo-3.pdf" download="clase2-mayo-3.pdf" onclick="event.stopPropagation()" style="display:inline-flex;align-items:center;justify-content:center;padding:10px 16px;border-radius:999px;background:#2563eb;color:#fff;font-weight:700;text-decoration:none;white-space:nowrap;">Bajar PDF</a>
+        <a class="archivo-download" href="clase2-mayo-3.pdf?v=1" download="clase2-mayo-3.pdf" onclick="event.stopPropagation()" style="display:inline-flex;align-items:center;justify-content:center;padding:10px 16px;border-radius:999px;background:#2563eb;color:#fff;font-weight:700;text-decoration:none;white-space:nowrap;">Bajar PDF</a>
       </div>
     </div>`;
 }
