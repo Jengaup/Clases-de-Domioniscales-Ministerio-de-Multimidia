@@ -1,12 +1,13 @@
 /* Configuración mínima del sitio */
 const CONFIG = {
-  claseActual: 3,
+  claseActual: 4,
 };
 
 const CLASES = [
   { n: 1, mes: 1, tema: "IDENTIDAD", titulo: "No soy técnico, soy mayordomo", pasaje: "Lucas 16:10-12", fecha: "Domingo, 26 de abril de 2026" },
   { n: 2, mes: 1, tema: "IDENTIDAD", titulo: "El problema del orgullo técnico", pasaje: "1 Corintios 8:1 / Filipenses 2:3-4", fecha: "Domingo, 3 de mayo de 2026" },
   { n: 3, mes: 1, tema: "IDENTIDAD", titulo: "El llamado que antecede al talento", pasaje: "Éxodo 31:1-5", fecha: "Domingo, 10 de mayo de 2026" },
+  { n: 4, mes: 1, tema: "IDENTIDAD", titulo: "Servicio anónimo: la gloria que no se ve", pasaje: "Mateo 6:3-4 / Colosenses 3:23", fecha: "Domingo, 24 de mayo de 2026" },
 ];
 
 const MES_COLOR = { 1: "identidad" };
@@ -55,6 +56,9 @@ function fixPdfButtons() {
     link.setAttribute("target", "_blank");
     link.setAttribute("rel", "noopener");
 
+    if (text.includes("Clase 4")) {
+      link.href = "https://multimedia.ccadoram.com/clase4-mayo-24.pdf?v=1";
+    }
     if (text.includes("Clase 3")) {
       link.href = "https://multimedia.ccadoram.com/clase3-mayo-10.pdf?v=1";
     }
